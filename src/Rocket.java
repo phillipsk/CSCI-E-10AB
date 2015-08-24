@@ -7,6 +7,8 @@ public class Rocket {
         diamond();
         drawX();
         rocketSHIP();
+        //System.out.println("New figure:");
+        //coneUP();coneUP();rocketSHIP();drawX();rocketSHIP();coneUP();vDown();box();coneUP();vDown();drawX();rocketSHIP();
     }
 
     public static void diamond(){
