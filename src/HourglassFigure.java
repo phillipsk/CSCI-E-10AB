@@ -1,6 +1,3 @@
-/**
- * Created by tech-ministry on 8/26/15.
- */
     /**
      * Created by Kevin Phillips on 8/26/15.
      * Following Reges, Stuart, and Martin Stepp. Building Java Programs: A Back to Basics Approach.
