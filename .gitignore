@@ -1,6 +1,6 @@
 # Intellij IDEA IDE specific
 
-*.class
+#*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -47,7 +47,7 @@ hs_err_pid*
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+# /out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
