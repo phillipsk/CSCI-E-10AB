@@ -1,7 +1,7 @@
 /**
  * Created by Kevin Phillips on 8/28/15.
- * Following Reges, Stuart, and Martin Stepp. Building Java Programs: A Back to Basics Approach.
- * Chapter 2 Self-Check Problems
+ * Following Reges, Stuart, and Martin Stepp. Building Java Programs: A Back to Basics Approach. 3rd Edition.
+ * Chapter 2 Self-Check Problems Question 34 & 35
  */
 public class Ch2_SelfCheckProblems {
 
@@ -19,9 +19,9 @@ public class Ch2_SelfCheckProblems {
 
     public static void  question34(){
 /**
- * Table 6 lines; CONSTANT = 6      22 -(4*(line-1)
- * Line 1   ! = 22  \ = 0   / = 0   6 4
- * Line 2   ! = 18  \ = 2   / = 2   4
+ * Table 6 lines; CONSTANT = 6
+ * Line 1   ! = 22  \ = 0   / = 0
+ * Line 2   ! = 18  \ = 2   / = 2
  * Line 3   ! = 14  \ = 4   / = 4
  * Line 4   ! = 10  \ = 6   / = 6
  * Line 5   ! = 6   \ = 8   / = 8
