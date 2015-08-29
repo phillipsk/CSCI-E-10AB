@@ -63,13 +63,13 @@ public class Ch2_SelfCheckProblems {
 
     public static void solution34(){
         for (int line = 1; line <= SIZE; line++){
-            for(int i = 1; i<=((2 * line) - 2); i++) {
+            for(int i = 1; i<=((2 * line) - 2); i++){
                 System.out.print("\\");
             }
             for (int i = 1; i <= ( -4 * line + ( 4 * SIZE + 2 ) ); i++){
                 System.out.print("!");
             }
-            for(int i = 1; i<= ((2 * line) - 2); i++) {
+            for(int i = 1; i<= ((2 * line) - 2); i++){
                 System.out.print("/");
             }
             System.out.println();
