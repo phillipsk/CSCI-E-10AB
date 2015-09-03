@@ -21,28 +21,34 @@ public class Ch3 {
 
 //        strings();
 //        scannerTesting();
-        ch3_Case_study();
+
+//        unstructured case study solution
+//        ch3_Case_study();
+
+//        structured case study solution
+        ch3_Case_Study_Structured();
+
     }
 
-    public static double sum(double n){
+    public static double sum(double n) {
         return (n + 1) * n / 2;
     }
 
-    public static double hypotenuses(double a, double b){
+    public static double hypotenuses(double a, double b) {
         double c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
         return c;
     }
 
-    public static void  strings(){
+    public static void strings() {
         String s1 = "Hello";
         String s2 = "How are you?";
 //        s2.substring(0,3);
-        System.out.println(s2.substring(0,3));
+        System.out.println(s2.substring(0, 3));
         System.out.println(s2.toUpperCase());
 
     }
 
-    public static void scannerTesting(){
+    public static void scannerTesting() {
         Scanner console = new Scanner(System.in);
 //        int n = console.nextInt();
 //        System.out.println(n);
@@ -59,22 +65,23 @@ public class Ch3 {
         System.out.println(userInput);
     }
 
-public static final double ACCELERATION = -9.81;
-    public static void ch3_Case_study(){
+    public static final double ACCELERATION = -9.81;
+
+    public static void ch3_Case_study() {
 //        This program computes the trajectory of a projectile.
         System.out.print("This program computes the trajectory \n" +
                 "of a projectile given its inital velocity \n" +
                 "and its angle relative to the horizontal.\n\n");
 
         System.out.println("Please enter the inital velocity: (format m/s)");
-            Scanner console = new Scanner(System.in);
+        Scanner console = new Scanner(System.in);
         double userVelocity = console.nextDouble();
         System.out.println("Please enter the degrees of the angles:");
 //            Scanner console = new Scanner(System.in);
         double userDegreees = Math.toRadians(console.nextDouble());
 //        double userRadians = Math.toRadians(userDegreees);
         System.out.println("How many steps?");
-            int userSteps = console.nextInt();
+        int userSteps = console.nextInt();
 
 //        System.out.println(userVelocity+" "+userDegreees+" "+userSteps);
 
@@ -84,24 +91,72 @@ public static final double ACCELERATION = -9.81;
         double timeIncrement = totalTime / userSteps;
         double xIncrement = xVelocity * timeIncrement;
 
-        double x = 0.0,y = 0.0,t = 0.0;
+        double x = 0.0, y = 0.0, t = 0.0;
 //          illegal
 //      double x,y,t =0.0;
         System.out.println("Step\tx\ty\ttime");
         System.out.println("0\t0.0\t0.00\t0.0");
-        for (int i = 1; i <= userSteps; i++){
+        for (int i = 1; i <= userSteps; i++) {
 //            t =+ timeIncrement;
             t += timeIncrement;
 //            x =+ xIncrement;
             x += xIncrement;
-            y = yVelocity*t+0.5*ACCELERATION*t*t;
+            y = yVelocity * t + 0.5 * ACCELERATION * t * t;
             System.out.println(i + "\t" + round2(x) + "\t" +
                     round2(y) + "\t" + round2(t));
         }
     }
 
-    public static double round2(double n){
+    public static double round2(double n) {
         return Math.round(n * 100.0) / 100.0;
     }
 
+    public static void giveIntro() {
+        //        This program computes the trajectory of a projectile.
+        System.out.print("This program computes the trajectory \n" +
+                "of a projectile given its inital velocity \n" +
+                "and its angle relative to the horizontal.\n\n");
+    }
+
+    public static void printTable(double VELOCITY, double RADIANS, int STEPS) {
+        double xVelocity = VELOCITY * Math.cos(RADIANS);
+        double yVelocity = VELOCITY * Math.sin(RADIANS);
+        double totalTime = -2.0 * yVelocity / ACCELERATION;
+        double timeIncrement = totalTime / STEPS;
+        double xIncrement = xVelocity * timeIncrement;
+
+        double x = 0.0, y = 0.0, t = 0.0;
+//          illegal
+//      double x,y,t =0.0;
+        System.out.println("Step\tx\ty\ttime");
+        System.out.println("0\t0.0\t0.00\t0.0");
+        for (int i = 1; i <= STEPS; i++) {
+//            t =+ timeIncrement;
+            t += timeIncrement;
+//            x =+ xIncrement;
+            x += xIncrement;
+//            y = yVelocity*t+0.5*ACCELERATION*t*t;
+            y = mathPhysicsVelocityDisplacementEquation(yVelocity, ACCELERATION, t);
+            System.out.println(i + "\t" + round2(x) + "\t" +
+                    round2(y) + "\t" + round2(t));
+        }
+    }
+
+    public static double mathPhysicsVelocityDisplacementEquation(double v, double a, double t) {
+        return v * t + 0.5 * a * t * t;
+    }
+
+    public static void ch3_Case_Study_Structured(){
+        giveIntro();
+        System.out.println("Please enter the inital velocity: (format m/s)");
+        Scanner console = new Scanner(System.in);
+        double userVelocity = console.nextDouble();
+        System.out.println("Please enter the degrees of the angles:");
+        //            Scanner console = new Scanner(System.in);
+        double userDegreees = Math.toRadians(console.nextDouble());
+        //        double userRadians = Math.toRadians(userDegreees);
+        System.out.println("How many steps?");
+        int userSteps = console.nextInt();
+        printTable(userVelocity, userDegreees, userSteps);
+    }
 }
