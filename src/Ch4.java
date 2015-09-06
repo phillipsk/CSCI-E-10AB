@@ -3,11 +3,11 @@ import java.util.Scanner;
 /**
  * Created by Kevin Phillips on 9/5/15.
  * Following Reges, Stuart, and Martin Stepp. Building Java Programs: A Back to Basics Approach. 3rd Edition.
- * Chapter
+ * Chapter 4
  */
 public class Ch4 {
     public static void main(String[] args) {
-hailstone_Sequence();
+        hailstone_Sequence();
     }
 
     public static void hailstone_Sequence(){
@@ -23,35 +23,28 @@ hailstone_Sequence();
         compute_Hailstone_Sequence(BEGINVALUE, STEPS);
     }
 
-    public static int compute_Hailstone_Sequence(int begin_num, int steps){
+    public static int compute_Hailstone_Sequence(int begin_num, int steps) {
+//          expected output = 7 22 11 34 17 52 26 13 40 20 10
         System.out.print(begin_num + " ");
-        for (int i = 1; i <= steps; i++ ){
-            int x;
-            if ((begin_num & 1) == 0 ){
+        int x = 0;
+        for (int i = 1; i <= steps; i++) {
+            if ((begin_num & 1) == 0) {
 //                even
 //                int x = 0;
                 x = (begin_num / 2);
                 System.out.print(x + " ");
 //                return x;
-            }
-            else {
+                begin_num = x;
+            } else {
 //                int x = 0;
                 x = (3 * begin_num + 1);
                 System.out.print(x + " ");
 //                return x;
+                begin_num = x;
             }
-            return x;
         }
-        return begin_num;
+        return x;
     }
-
-/*    public static int odd_or_Even(int input_num){
-        if ((input_num & 1) == 0 ){
-
-        }
-
-    }*/
-
     public static void giveIntro(){
         System.out.println("In mathematics, there is an open problem that invlolves\n " +
                 "what are known as hailstone sequances.\n" +
