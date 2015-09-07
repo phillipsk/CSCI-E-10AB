@@ -1,6 +1,6 @@
 # Intellij IDEA IDE specific
 
-#*.class
+*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
