@@ -27,30 +27,45 @@ public class Ch4 {
 //          expected output = 7 22 11 34 17 52 26 13 40 20 10
         System.out.print(begin_num + " ");
         int x = 0;
+//        int min, max;
+//        Cannot initialize to 0
+        int min = begin_num;
+        int max =  begin_num;
+//        x = begin_num;
+
         for (int i = 1; i <= steps; i++) {
             if ((begin_num & 1) == 0) {
 //                even
 //                int x = 0;
                 x = (begin_num / 2);
                 System.out.print(x + " ");
-//                return x;
                 begin_num = x;
             } else {
 //                int x = 0;
                 x = (3 * begin_num + 1);
                 System.out.print(x + " ");
-//                return x;
                 begin_num = x;
             }
+            if (begin_num >= max){
+                max = begin_num;
+            } else if( begin_num <= min) {
+                min = begin_num;
+            }
         }
+        System.out.println();
+        System.out.println("max = " + max);
+        System.out.println("min = " + min);
         return x;
+/*        return min;
+        return max;*/
     }
     public static void giveIntro(){
-        System.out.println("In mathematics, there is an open problem that invlolves\n " +
-                "what are known as hailstone sequances.\n" +
+        System.out.println("In mathematics, there is an open problem that involves\n " +
+                "what are known as hailstone sequences.\n" +
                 "These sequences of numbers often rise and\n " +
-                "fall in upredictable patterna, which is somewhat\n" +
-                " analgous to the process that forms hailstones.\n");
-        System.out.println("This method ouputs hailstone sequences:");
+                "fall in unpredictable pattern, which is somewhat\n" +
+                " analogous to the process that forms hailstones.\n");
+        System.out.println("This method outputs hailstone sequences:");
     }
+
 }
