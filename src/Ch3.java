@@ -19,14 +19,14 @@ public class Ch3 {
 
         System.out.println("The hypotenuse is " + hypotenuses(20, 40));*/
 
-//        strings();
+        strings();
 //        scannerTesting();
 
 //        unstructured case study solution
 //        ch3_Case_study();
 
 //        structured case study solution
-        ch3_Case_Study_Structured();
+//        ch3_Case_Study_Structured();
 
     }
 
