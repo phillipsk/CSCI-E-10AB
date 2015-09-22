@@ -7,7 +7,8 @@ import java.util.Scanner;
  */
 public class Ch4 {
     public static void main(String[] args) {
-        hailstone_Sequence();
+//        hailstone_Sequence();
+        printFactorial();
     }
 
     public static void hailstone_Sequence(){
@@ -67,5 +68,20 @@ public class Ch4 {
                 " analogous to the process that forms hailstones.\n");
         System.out.println("This method outputs hailstone sequences:");
     }
+// return math needed to calculate factorial, but not yet included in main method
+    public static int factorial(int n){
+        int product = 1;
+        for (int i = 2; i <= n; i++){
+            product = product * i;
+        }
+        return product;
+    }
 
+    public static void printFactorial(){
+        for (int i = 0; i <= 10; i++){
+            System.out.println(i + "! = " + factorial(i));
+        }
+    }
 }
+
+
