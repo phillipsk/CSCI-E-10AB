@@ -65,7 +65,7 @@ public class Ch4_cumulative_Sum_if {
 
 //        New regex package or split methods supersede legacy Tokenizer class (further below)
 //        http://docs.oracle.com/javase/7/docs/api/java/util/StringTokenizer.html
-        String[] result = s.split("\\s");
+        String[] result = s.split(" ");
         System.out.println(s.length());
         for (int x=0; x<result.length; x++)
             System.out.println(result[x]);
