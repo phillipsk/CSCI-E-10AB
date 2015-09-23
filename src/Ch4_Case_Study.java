@@ -1,3 +1,4 @@
+import javax.sound.midi.SysexMessage;
 import java.security.PublicKey;
 import java.util.Scanner;
 
@@ -12,16 +13,33 @@ public class Ch4_Case_Study {
 
 //        prompt user for their height and weight
         Scanner console = new Scanner(System.in);
-        System.out.println("Please enter your age: ");
-        int user_AGE = console.nextInt();
-        System.out.println("Please enter your weight: ");
-        double user_WEIGHT = console.nextDouble();
-        System.out.println("Please enter your height: ");
-        double user_HEIGHT = console.nextDouble();
-        System.out.println("Thank you. Please wait while we calculate your Body Mass Index (BMI)..");
-        System.out.print("Your BMI is: ");
-        System.out.printf("Your BMI is: %10.2f\n"+calcBMI(user_AGE,user_WEIGHT,user_HEIGHT));
+
+        System.out.println("How many individuals will be receiving a BMI calculation?");
+        int users_TOTAL = console.nextInt();
+        if (users_TOTAL <= 0) {
+            throw new IllegalArgumentException("Please provide a logical entry.");
+        } else if(users_TOTAL >= 10){
+            throw new IllegalArgumentException("The maximum number of participants for this program is 2.");
+        } else{
+            for (int i = 0; i < 2; i++){
+
+
+                System.out.println("Please enter your age: ");
+                int user_AGE = console.nextInt();
+                System.out.println("Please enter your weight: ");
+                double user_WEIGHT = console.nextDouble();
+                System.out.println("Please enter your height: ");
+                double user_HEIGHT = console.nextDouble();
+                System.out.println("\nThank you. Please wait while we calculate your Body Mass Index (BMI)..");
+//                System.out.print("Your BMI is: ");
+                System.out.printf("\nYour BMI is: %10.2f\n", calcBMI(user_AGE, user_WEIGHT, user_HEIGHT));
+                if(i < 1) {
+                    System.out.println("\nNext individual please.");
+                    System.out.println();
+                }
+            }
 //        System.out.println("Your BMI is: "+ calcBMI(user_AGE,user_WEIGHT,user_HEIGHT));
+        }
     }
 
     public static double calcBMI(int age, double weight, double height){
@@ -34,9 +52,13 @@ public class Ch4_Case_Study {
         return BMI;
     }
 
+    public static String respone_BMI(){
+        double results = calcBMI(user_AGE, user_WEIGHT, user_HEIGHT);
+    }
+
     public static void give_IntroBMI(){
         System.out.print("This program reads data for (2) two \n" +
                 "people and computes their body \n" +
-                "mass index and weight status.");
+                "mass index and weight status.\n\n");
     }
 }
