@@ -17,6 +17,7 @@ public class Pset2_HW {
         for (int inner =1; inner <=8; inner++){
             System.out.print("");
         }
+
         System.out.println();
     }
 
