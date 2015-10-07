@@ -10,6 +10,7 @@ public class Charity {
         Scanner console = new Scanner(System.in);
         System.out.println("Enter the amount of a contribution:  ");
         double contribution = console.nextDouble();
+//        Store this method as a value
 //        String Response = "donor(contribution);";
 //        System.out.println("You are designated within the "+ Response + " group.");
         System.out.println("You are designated in the group: ");
