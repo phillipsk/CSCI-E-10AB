@@ -12,7 +12,9 @@ public class Charity {
         double contribution = console.nextDouble();
 //        Store this method as a value
 //        String Response = "donor(contribution);";
-//        System.out.println("You are designated within the "+ Response + " group.");
+//        String Response = "You are designated within the "+ donor(contribution); + " group.";
+//        System.out.println("You are designated within the "+ Response " group.");
+//        System.out.println("You are designated within the "+ donor(contribution) + " group.");
         System.out.println("You are designated in the group: ");
         donor(contribution);
     }
@@ -42,8 +44,12 @@ public class Charity {
         else if (donation >= 100.00 && donation <= 499.99){
             System.out.println("Friends");
         }
-        else {
+        else if(donation >= 0 && donation <= 99.99){
             System.out.println("Cheapskates");
+        }
+        else {
+            throw new IllegalArgumentException("Negative donations are illogical and unaccepted, please enter" +
+                    " a positive amount.");
         }
     }
 }
