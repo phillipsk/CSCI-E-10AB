@@ -34,7 +34,7 @@ public class Easter {
         int n = (h - m + r + 90) / 25;
         int p = (h - m + r + n + 19) % 32;
 
-        System.out.println("Easter falls on the " + p + " of " + n);
+        System.out.println(n + "/" + p);
         /* Initially initialized variables as type double, subsequently debugged
         System.out.println(a);
         System.out.println(b);

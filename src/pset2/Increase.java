@@ -9,32 +9,72 @@ import java.util.Scanner;
 public class Increase {
 
     // Number of days of stock prices
-    public static final int DAYS = 10;
+    public static final int DAYS = 4;
 
     public static void main(String[] args) {
-
+        int day_num_max = 0;
+        int day_num_min = 0;
+        int range = 0;
         int stock = 0;
         int min = 0;
         int max = 0;
 
+        System.out.println("Please enter "+ DAYS +" stock prices: ");
         for (int i = 1; i <= DAYS; i++) {
             Scanner console = new Scanner(System.in);
-            System.out.println("Please enter "+ DAYS +" stock prices: ");
             System.out.println("Stock Price    #" + i + " = ");
 
             stock = console.nextInt();
-
-            if (stock >= max){
+            if (stock > max){
                 max = stock;
-            } else if( stock <= min) {
+                day_num_max = i;
+            } /*else {
                 min = stock;
+                day_num_min = i;
             }
-//            calculates the range from max stock price to minimun stock price
-            int range = max - min;
-        }
+*/
+            range = max - stock;
 
+        }
+        System.out.println("The largest increase of " + range);
+        System.out.println("from " + min + " to " + max);
+        System.out.println("occurred between day #" + day_num_min + " and " +
+                "day #" + day_num_max);
     }
 }
+/*
+int day_num_max = 0;
+int day_num_min = 0;
+int range = 0;
+int stock = 0;
+int min = 1000000;
+int max = 0;
+
+System.out.println("Please enter "+ DAYS +" stock prices: ");
+        for (int i = 1; i <= DAYS; i++) {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Stock Price    #" + i + " = ");
+
+        stock = console.nextInt();
+
+        if (stock >= max){
+        max = stock;
+        day_num_max = i;
+        }
+        if (stock <= min){
+        min = stock;
+        day_num_min = i;
+        }
+//            calculates the range from max stock price to minimun stock price
+        range = max - min;
+        }
+        System.out.println("The largest increase of " + range);
+        System.out.println("from " + min + " to " + max);
+        System.out.println("occurred between day #" + day_num_min + " and " +
+        "day #" + day_num_max);
+        }*/
+
+
 /*
 
     System.out.print(begin_num + " ");
