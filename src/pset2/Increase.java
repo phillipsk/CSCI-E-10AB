@@ -12,32 +12,54 @@ public class Increase {
     public static final int DAYS = 4;
 
     public static void main(String[] args) {
+        System.out.println("Please enter "+ DAYS +" stock prices: ");
+        Scanner console = new Scanner(System.in);
         int day_num_max = 0;
         int day_num_min = 0;
         int range = 0;
         int stock = 0;
+        int stockA = 0;
+        int stockB = 0;
         int min = 0;
         int max = 0;
+        int newMax = 0;
 
-        System.out.println("Please enter "+ DAYS +" stock prices: ");
-        for (int i = 1; i <= DAYS; i++) {
-            Scanner console = new Scanner(System.in);
-            System.out.println("Stock Price    #" + i + " = ");
+        System.out.println("Stock Price    #1 = ");
+        stockA = console.nextInt();
+        System.out.println("Stock Price    #2 = ");
+        stockB = console.nextInt();
+        max = Integer.min(stockA,stockB);
 
+        // what does this do??
+        // 48 54 49 47 62 64 59 70 75 82
+/*
+        10 20 40 15
+        Day 2 to 3 with a jump of 20
+*/
+
+        for (int i = 3; i <= DAYS; i = i+2) {
+            for (int j =1; j <= 2; j++){
+                int aabb = j+1;
+                System.out.println("Stock Price    #" + aabb + " = ");
+                stockA = console.nextInt();
+//                System.out.println("Stock Price    #" + i+ + " = ");
+//                stockB = console.nextInt();
+
+            }
             stock = console.nextInt();
             if (stock > max){
-                max = stock;
+                newMax = stock;
                 day_num_max = i;
-            } /*else {
+            } else {
                 min = stock;
                 day_num_min = i;
             }
-*/
-            range = max - stock;
+
+            range = newMax - max;
 
         }
         System.out.println("The largest increase of " + range);
-        System.out.println("from " + min + " to " + max);
+        System.out.println("from " + min + " to " + newMax);
         System.out.println("occurred between day #" + day_num_min + " and " +
                 "day #" + day_num_max);
     }
