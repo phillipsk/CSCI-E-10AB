@@ -20,6 +20,7 @@ public class ThisOldMan {
         verse(10,"on my hen");
     }
 
+//    What does this method do?
     public static void verse(int n, String s){
         /*  This old man, he played 1.
             He played nick-nack on my drum;

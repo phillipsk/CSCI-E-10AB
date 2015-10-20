@@ -12,15 +12,25 @@ public class Digits {
         System.out.println("Please enter a five digit number to be reversed: ");
         Scanner console = new Scanner(System.in);
 //        int number = console.nextInt();
-        reverseNumber(console.nextInt());
+        int origin_INPUT = console.nextInt();
+//        reverseNumber(origin_INPUT);
 //        firstDigit(console.nextInt());
+        String origin_STRING = Integer.toString(origin_INPUT);
+
+        for (int i = 10000; i <= 99999; i++){
+            if (origin_STRING == reverseNumber(origin_INPUT)){
+
+            }
+
+        }
+
     }
 //    What does this do, @param @return ???
-        public static void reverseNumber(int inputNumber){
+        public static String reverseNumber(int inputNumber){
             int u = inputNumber % 10;
             int t = (inputNumber % 100) / 10;
             int h = (inputNumber % 1000) / 100;
-            int th = (inputNumber %10000) / 1000;
+            int th = (inputNumber % 10000) / 1000;
             int t_th = inputNumber / 10000;
 //            debug number = 51273
             System.out.println("units = "+ u);
@@ -33,7 +43,8 @@ public class Digits {
 //            System.out.println(u+""+ t + th + t_th + h);
 //            String inputReversed = Integer.toString(u+ t + th + t_th + h);
             String inputReversed = u+""+ t + h + th + t_th;
-            System.out.println(inputReversed);
+//            System.out.println(inputReversed);
+            return inputReversed;
         }
 
 }
