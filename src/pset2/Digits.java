@@ -4,8 +4,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Created by Kevin Phillips on 10/12/2015
- * Following Reges, Stuart, and Martin Stepp. Building Java Programs: A Back to Basics Approach. 3rd Edition.
+ * @author Kevin Phillips
+ * @since 10/19/2015
+ * csci-e-10ab
  */
 public class Digits {
     public static void main(String[] args) {
@@ -28,10 +29,16 @@ public class Digits {
             String for_loop_STRING = Integer.toString(i);
             int for_loop_I_BY_FOUR = i * 4;
             String for_loop_STRING_BY_FOUR = reverseNumber(for_loop_I_BY_FOUR);
-            if (for_loop_STRING.equals(for_loop_STRING_BY_FOUR)){
+            String FB4 = for_loop_STRING_BY_FOUR.substring(0,4);
+            String FLS = for_loop_STRING.substring(0,4);
+//            System.out.println(FB4 + " " + FLS);
+//            System.out.println(for_loop_STRING_BY_FOUR.substring(0,4));
+//            if (for_loop_STRING.substring(0, 4).equals(for_loop_STRING_BY_FOUR.substring(0,4))){
+//            if (for_loop_STRING.equals(for_loop_STRING_BY_FOUR)){
+            if (FLS.equals(FB4)){
                 System.out.println(i);
             }
-
+//            i = 0000;
 //            System.out.println("No match");
 
         }
@@ -57,7 +64,7 @@ public class Digits {
 //            String inputReversed = Integer.toString(u+ t + th + t_th + h);
             String inputReversed = u+""+ t + h + th; // + t_th;
 //            System.out.println(inputReversed);
-            return inputReversed;
+            return inputReversed.substring(0,4);
         }
 
 }
