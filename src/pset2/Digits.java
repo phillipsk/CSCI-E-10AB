@@ -19,7 +19,7 @@ public class Digits {
 
         for (int i = 10000; i <= 99999; i++){
             if (origin_STRING == reverseNumber(origin_INPUT)){
-
+//            debug number = 51273
             }
 
         }
