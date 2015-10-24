@@ -16,8 +16,14 @@ public class Temperature {
         temp_Sport(user_INPUT);
     }
 
+    /**
+     * This method evaluates user input via System.in console input generated in main method, and
+     * depending on following logic, recommends suitable sports for the evaluated temp variable
+     * @param temp  passes user_INPUT from main method against multiple if statements to determine the appropriate sport
+     */
 //    what does this method do?
     public static void temp_Sport(int temp){
+
         if (temp > 110 || temp < -20){
             throw new IllegalArgumentException("No sports will be played above 110 degrees nor below -20 degrees.");
         } else {
