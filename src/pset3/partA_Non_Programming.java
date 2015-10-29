@@ -7,14 +7,14 @@ package pset3;
  * @since 10/28/2015
  */
 public class partA_Non_Programming {
-    public final int I = 14;
-    public final int J = 13;
+
     public static void main(String[] args) {
-        q_2(); q_2_while();
+//        deMorgan();
+        q_2(); System.out.println(" New Q"); q_2_while();
     }
 
     public static void q_2(){
-        int i = 2;
+        int i = 8;
         int j = 13;
         do {
             i++;
@@ -25,28 +25,50 @@ public class partA_Non_Programming {
     }
 
     public static void q_2_while(){
-        int i = 2;
+        int i = 8;
         int j = 13;
-        while ((i < 10) && (j * j != 25)){
-            i++;
-            j++;
-            System.out.println(i * j);
+        int times = 0;
+        if (i >= 10) {
+            if (times == 0) {
+                i++;
+                j++;
+                System.out.println(i * j);
+                times++;
+            }
+        }else {
+            while ((i < 10) && (j * j != 25)){
+                i++;
+                j++;
+                System.out.println(i * j);
+            }
         }
     }
 
-    public static void deMorgan(){
+    public static void deMorgan() {
         boolean a = true;
         boolean b = false;
+        int x = 3;
+        int y = 5;
+        int number = 0;
 //        !(p && q) --> !p || !q
 //        !(a && b) --> !a || !b
 
 //        !(a || b) --> !a && !b
 
 //        Hw
-//        ! (x != 0 || y != 0) -->  !(x != 0 && y != 0)
+//        ! (x != 0 || y != 0) -->  x = 0 && y = 0
 //        or
 //        ! (x != 2 || y != 6) -->  !(x = 2 && y = 6)
-//        x = 2 || y = 6    -->     x = 2 && y = 6
+//        x = 2 || y = 6    -->     x != 2 && y != 6
+
+        while (!(x % 2 != 0 || y % 2 != 0)) {
+//            if (number % 2 == 0) //even
+            System.out.println("Even");
+        }
+        while (x % 2 == 0 && y % 2 == 0) {
+//            if (number % 2 == 0) //even
+            System.out.println("Even");
+        }
     }
 
     public static void  q_1(){
