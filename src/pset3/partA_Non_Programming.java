@@ -10,7 +10,20 @@ public class partA_Non_Programming {
 
     public static void main(String[] args) {
 //        deMorgan();
-        q_2(); System.out.println(" New Q"); q_2_while();
+//        q_2(); System.out.println(" New Q"); q_2_while();
+        sorted(3.4,5.5,8.1);
+        sorted(3.4,8.1,5.5);
+        sorted(3.4,3.4,5.5);
+    }
+
+    public static boolean sorted(double x, double y, double z){
+        if (x <= y && x <= z && y <= z){
+            System.out.println("TRUE");
+            return true;
+        }else {
+            System.out.println("FALSE");
+            return false;
+        }
     }
 
     public static void q_2(){
