@@ -8,6 +8,8 @@ import java.util.Scanner;
  * @since 10/21/15
  */
 public class Temperature {
+    /** Accepts user input and calls temp_Sport method.
+     */
     public static void main(String[] args){
         Scanner console = new Scanner(System.in);
         System.out.println("OK, mate, what's the temperature outside?");
@@ -20,8 +22,8 @@ public class Temperature {
      * This method evaluates user input via System.in console input generated in main method, and
      * depending on following logic, recommends suitable sports for the evaluated temp variable
      * @param temp  passes user_INPUT from main method against multiple if statements to determine the appropriate sport
+     * @throws IllegalArgumentException if temp = -20 < temp > 110 no sports will be played
      */
-//    what does this method do?
     public static void temp_Sport(int temp){
 
         if (temp > 110 || temp < -20){

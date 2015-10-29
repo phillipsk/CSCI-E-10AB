@@ -7,6 +7,8 @@ package pset2;
  */
 
 public class ThisOldMan {
+    /** Main contains the 10 integer-string verse pairs.
+     */
     public static void main(String[] args) {
         verse(1,"on my drum");
         verse(2,"on my shoe");
@@ -20,24 +22,16 @@ public class ThisOldMan {
         verse(10,"on my hen");
     }
 
-//    What does this method do?
+    /**
+     * This method concatenates the following two parameters to print the nursery rhyme "This Old Man"
+     *  These parameters are listed in the main method.
+     * @param n passed by main, corresponds to the related integer within the verse
+     * @param s passed by main, corresponds to the related string within the verse
+     */
     public static void verse(int n, String s){
-        /*  This old man, he played 1.
-            He played nick-nack on my drum;
-            With a nick-nack paddy-whack, give the dog a bone,
-            This old man came running home.
-
-            This old man, he played 2.
-            He played nick-nack on my shoe;
-            With a nick-nack paddy-whack, give the dog a bone,
-            This old man came running home. */
-
         System.out.print("This old man, he played " + n +". \n"+
             "He played nick-nack " + s + ";\n" +
             "With a nick-nack paddy-whack, give the dog a bone,\n" +
             "This old man came running home.\n");
-//            "This old man, he played 2." +
-//            "He played nick-nack on my shoe;");
-
     }
 }
