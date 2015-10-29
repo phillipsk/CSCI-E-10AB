@@ -11,17 +11,19 @@ public class partA_Non_Programming {
     public static void main(String[] args) {
 //        deMorgan();
 //        q_2(); System.out.println(" New Q"); q_2_while();
-        sorted(3.4,5.5,8.1);
-        sorted(3.4,8.1,5.5);
-        sorted(3.4,3.4,5.5);
+        sorted(3.4,5.5,8.1);    // sorted
+        sorted(3.4,8.1,5.5);    // unsorted
+        sorted(3.4,3.4,5.5);    // sorted
+        sorted(3.4,5.5,3.4);    // unsorted
+//        sorted(3.4,3.4,5.5);
     }
 
     public static boolean sorted(double x, double y, double z){
         if (x <= y && x <= z && y <= z){
-            System.out.println("TRUE");
+            System.out.println("TRUE - Sorted");
             return true;
         }else {
-            System.out.println("FALSE");
+            System.out.println("FALSE - Unsorted");
             return false;
         }
     }
