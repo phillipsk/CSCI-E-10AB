@@ -10,8 +10,27 @@ import java.util.Random;
  */
 public class Drunk {
     public final static int CONSTANT = 5;
+
     public static void main(String[] args) {
-        drunkWalk();
+
+        int sum = 0;
+
+        for (int i = 1; i <= CONSTANT; i++){
+
+            int result = drunkWalk();
+            if (result < 0){
+                result = result * -1;
+//                sum += result;
+                System.out.println("Here we go again... time for a walk! \n" +
+                        "Took " + result + " steps, and\nLanded in JAIL.");
+            } else {
+                System.out.println("Here we go again... time for a walk! \n" +
+                        "Took " + result + " steps, and\n Landed at HOME.");
+            }
+            sum += result;
+            System.out.println();
+        }
+        System.out.println("Average # of steps equals " + (double) sum/CONSTANT);
     }
 
     public static int drunkWalk(){
@@ -22,21 +41,18 @@ public class Drunk {
         int totalSteps = 0;
 
         do {
-            Random r = new Random();
-            int steps = (r.nextInt(21) - 10);
-            starting_location += steps;
-//            System.out.println(starting_location);
+            double r  = Math.random();
+            if (r <= 0.5){
+                starting_location++;
+            }else {
+                starting_location--;
+            }
             totalSteps++;
         }while (starting_location != jail && starting_location != home);
 
-        String ending_location;
         if (starting_location == jail){
-            ending_location = ("Landed in JAIL");
-        }else {
-            ending_location = ("Landed at HOME");
+            totalSteps = totalSteps * -1;
         }
-        System.out.print("Here we go again... time for a walk! \n" +
-                "Took " + totalSteps + " steps, and \nLanded at " + ending_location);
 
         return totalSteps;
     }
