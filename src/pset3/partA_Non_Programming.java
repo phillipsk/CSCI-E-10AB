@@ -6,7 +6,7 @@ package pset3;
  * @author Kevin Phillips
  * @since 10/28/2015
  */
-public class partA_Non_Programming {
+public class PartA_Non_Programming {
 
     public static void main(String[] args) {
 //        deMorgan();

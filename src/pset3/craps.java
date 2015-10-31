@@ -8,19 +8,13 @@ import java.util.Random;
  * @author Kevin Phillips
  * @since 10/29/15
  */
-public class craps {
+public class Craps {
 
 
     public static void main(String [] args){
 
         diceRoll();
     }
-
-    /*public static int rInt(int a, int b){
-
-    }*/
-
-
 
 
     public static int diceRoll(){
@@ -52,15 +46,6 @@ public class craps {
         }else {
             System.out.println("YOU WIN");
         }
-/*        if (COUNTER < 1){
-
-        }
-        int point = sum;
-        while (diceRoll() == point){
-            System.out.println("YOU WIN");
-        }
-
-*/
         return sum;
     }
 }
