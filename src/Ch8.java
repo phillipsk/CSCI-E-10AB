@@ -25,6 +25,10 @@ public class Ch8 {
         Point p1 = new Point();
         p1.x = 7;
         p1.y = 2;
+
+        p1.translate(11,6);
+
+        System.out.println("Distance from origin = " + p1.distanceFromOrigin());
     }
 }
 
