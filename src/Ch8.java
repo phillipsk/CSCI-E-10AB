@@ -21,7 +21,7 @@ public class Ch8 {
         }
     }
 
-    public static void main(String[] args){
+/*    public static void main(String[] args){
         Point p1 = new Point();
         p1.x = 7;
         p1.y = 2;
@@ -29,6 +29,6 @@ public class Ch8 {
         p1.translate(11,6);
 
         System.out.println("Distance from origin = " + p1.distanceFromOrigin());
-    }
+    }*/
 }
 

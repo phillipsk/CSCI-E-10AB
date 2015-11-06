@@ -50,20 +50,4 @@ public class Craps {
         return sum;
     }
 
-/*        public static int rollDice(boolean conditioner){
-
-        int sum;
-        do {
-            Random r = new Random();
-//            roll the dice once
-            int roll1 = r.nextInt(6)+1;
-            int roll2 = r.nextInt(6)+1;
-            sum = roll1 + roll2;
-//            sum = 7;
-            System.out.println("Computer rolls a " + roll1 + " and a " + roll2 + ", for a " +
-                    "total of " + sum + ".");
-        } while (conditioner);
-            return sum;
-        }*/
-
 }
