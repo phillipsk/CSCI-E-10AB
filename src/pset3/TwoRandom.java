@@ -7,6 +7,12 @@ package pset3;
  * @since 11/6/15
  */
 public class TwoRandom {
+    /*
+    * This program evaluates two pseudo-random numbers through the use of the Math.random class. If the difference
+    * between both random numbers, defined by r1 and r2 is zero, the method indicates a tie through a printed statement.
+    * Likewise, if the resulting difference is not zero, but an even number, a victorious message is printed. Finally,
+    * a "You lose" message is printed to the console if the difference evaluates to an odd nuber.
+    * */
     public static void main(String[] args){
         int r1  = (int) (Math.random() * 7) + 1;
         int r2  = (int) (Math.random() * 7) + 1;
@@ -19,11 +25,5 @@ public class TwoRandom {
         }else{
             System.out.println("You lose!");
         }
-
-        /*else if ((r1-r2 == 1) || (r2-r1 == 1) || (r1-r2 == 3) || (r2-r1 == 3) || (r1-r2 == 5) || (r2-r1 == 5)){
-            System.out.println("You lose!");
-        }else if ((r1-r2 == 2) || (r2-r1 == 2) || (r1-r2 == 4) || (r2-r1 == 4) || (r1-r2 == 6) || (r2-r1 == 6)){
-            System.out.println("You win!");
-        }*/
     }
 }
