@@ -46,7 +46,7 @@ public class Congress {
 //    Learned of this method through the Reges textbook
     public static int getInt(Scanner console, String prompt){
         System.out.print(prompt);
-        while (!console.hasNextInt() && (console.nextInt() < 0)){
+        while (!console.hasNextInt()){ //&& (console.nextInt() < 0)){
             console.next(); // discard non-integer values as we are looking for integers only
             System.out.println("Not an integer, Please try again.");
             System.out.print(prompt);
