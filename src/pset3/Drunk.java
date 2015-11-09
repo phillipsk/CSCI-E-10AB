@@ -9,7 +9,7 @@ import java.util.Random;
  * @since 10/30/2015
  */
 public class Drunk {
-    public final static int CONSTANT = 5;
+    public final static int CONSTANT = 9;
 
     public static void main(String[] args) {
 
@@ -30,7 +30,7 @@ public class Drunk {
             sum += result;
             System.out.println();
         }
-        System.out.println("Average # of steps equals " + (double) sum/CONSTANT);
+        System.out.printf("Average # of steps equals " + "%.2f\n", (double) sum/CONSTANT);
     }
 
     public static int drunkWalk(){
