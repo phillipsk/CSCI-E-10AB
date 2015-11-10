@@ -29,10 +29,12 @@ public class Pencil_and_Paper_Exercises {
 //            System.out.print(text.indexOf(text.charAt(i)));
             int a = text.lastIndexOf(text.charAt(i));
             int b = text.length()-1;
+            String c = text.substring(0, text.length()-1);
+            System.out.println(c);
 //            System.out.println(text.length()-1);
-            if (text.lastIndexOf(text.charAt(i)) < (text.length()-1) ){
+/*            if ( text.substring (0,text.length() -1 ) < text.length()) ){ //text.lastIndexOf(text.charAt(i))
                 System.out.print("-");
-            }
+            }*/
         }
         System.out.println(); // to end the line of output
     }
