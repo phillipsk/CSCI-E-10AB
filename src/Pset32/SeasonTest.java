@@ -9,7 +9,13 @@ package Pset32;
 public class SeasonTest {
     public static void main(String[] args) {
         System.out.println(season(5,31));
-
+        System.out.println(season(2,29));
+        System.out.println(season(8,31));
+        System.out.println(season(8,30));
+        System.out.println(season(9,10));
+        System.out.println(season(5,31));
+        System.out.println(season(11,31));
+        System.out.println(season(11,31));
     }
 
     public static String season(int month, int day){

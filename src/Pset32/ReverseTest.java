@@ -10,17 +10,17 @@ import java.util.Scanner;
  */
 public class ReverseTest {
     public static void main(String[] args) {
-//        System.out.println(firstWord("the couch potato"));
-        Scanner console = new Scanner(System.in);
-        System.out.print("Please type a string:  ");
-//        System.out.println(printReverse(console.nextLine()));
-//        printReverse(console.nextLine());
         printReverse("Uncle Foobar");
+        printReverse(" ");
+        printReverse("   ");
+        printReverse("A man, a plan, a canal, Panama!");
+        System.out.println("");
+        printReverse("race car");
     }
 
     public static void printReverse(String s){
-        if (s.charAt(0) == ' '){    // This error checking does not work I need better
-            System.out.println("");
+        if (s.charAt(0) == ' '){
+            System.out.println(" ");
         }else {
 
             int left = 0;                // start at the beginning of the input String
@@ -33,18 +33,5 @@ public class ReverseTest {
                 System.out.print(s.charAt(i));
             }
         }
-    }
-
-    public static String firstWord(String s){
-        int start = 0;
-        while (start < s.length() && s.charAt(start) == ' '){
-            start++;
-        }
-
-        int stop = start;
-        while (stop < s.length() && s.charAt(stop) != ' '){
-            stop++;
-        }
-        return s.substring(start,stop);
     }
 }

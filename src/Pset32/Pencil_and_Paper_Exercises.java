@@ -1,5 +1,7 @@
 package Pset32;
 
+import java.util.Scanner;
+
 /**
  * csci-e-10ab
  *
@@ -24,7 +26,22 @@ public class Pencil_and_Paper_Exercises {
         mystery(4,8);   // 0 3 5 6
         mystery(10,31); // 0 9 17 24 30
 */
+        Scanner console = new Scanner(System.in);
+        System.out.print("Please type a string:  ");
+        System.out.println(sentenceType(console.nextLine()));
     }
+
+    public static String sentenceType(String s){
+            if (s.lastIndexOf(s.charAt(s.length()-1)) == '!'){
+                return "exclamatory";
+            } else if(s.lastIndexOf(s.charAt(s.length()-1)) == '?'){
+                return "interrogative";
+            }else if (s.lastIndexOf(s.charAt(s.length()-1)) == '.'){
+                return "declarative";
+            }else {
+                return "bad ending";
+            }
+        }
 
     public static void printLetters (String text)
     {
@@ -51,5 +68,16 @@ public class Pencil_and_Paper_Exercises {
         }
         System.out.println (s);
     }
+    public static String firstWord(String s){
+        int start = 0;
+        while (start < s.length() && s.charAt(start) == ' '){
+            start++;
+        }
 
+        int stop = start;
+        while (stop < s.length() && s.charAt(stop) != ' '){
+            stop++;
+        }
+        return s.substring(start,stop);
+    }
 }
