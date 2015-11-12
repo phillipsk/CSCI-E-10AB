@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class Roman {
     public static void main(String[] args) {
-        System.out.println(romanToArabic("LXXXVII"));       // 87
+//        System.out.println(romanToArabic("LXXXVII"));       // 87
         System.out.println(romanToArabic("CCXIX"));         // 219
         System.out.println(romanToArabic("MCCCLIV"));       // 1354
         System.out.println(romanToArabic("MMDCLXXIII"));    // 2673
@@ -34,7 +34,7 @@ public class Roman {
         for (int i = 0; i < s.length(); i++){
             if (s.charAt(i) == 'M') {
                 a_number += M;
-            }else if (s.charAt(i) == 'I' && s.charAt(i) != s.length()-1 ||
+            }else if (s.charAt(i) == 'I' && s.charAt(i) != s.length()-1 || s.charAt(i) == 'I' && s.charAt(i+1) != 'X' ||
                     s.charAt(i) == 'I' && s.charAt(i+1) != 'V'){
                     a_number += I;
             }else if (s.charAt(i) == 'D'){
