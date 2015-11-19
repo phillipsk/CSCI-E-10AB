@@ -8,8 +8,7 @@ package Pset32;
  */
 public class Movie {
     // first instance variables
-    //
-    public int acting;
+    public int acting; // previously defined as private
     private int directing;
     private int script;
 
