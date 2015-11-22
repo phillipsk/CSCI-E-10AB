@@ -24,18 +24,37 @@ public class RealEstate {
     }
 
     public static void noVowels(String s) {
-        char a;
-        int spaces = 0;
-//        ,e,i,o,u,y;
-        int start = 0;
-        int stop = 0;
-        String sOneVowel = "";
-        int counter = 0;
 
-        char finalWord = ' ';
+//        ,e,i,o,u,y;
+//        int start = 0;
+//        int stop = 0;
+//        String sOneVowel = "";
+
+        int spaces = 0;
+        int counter = 0;
         int length = s.length();
+
+//        First Word only
+        NoNoVowels(s, counter);
+
+//        remaining words
+        for (int j = 0; j < length; j++) {
+
+            if (s.charAt(j) == ' ') {
+//                System.out.print(" " + firstWord(s, j) + " ");
+                System.out.print(' ');
+                NoNoVowels(firstWord(s, j),counter);
+                spaces++;
+//                start = spaces;
+                spaces += j;
+            }
+        }
+    }
+
+    public static void NoNoVowels(String s, int counter) {
+        String sOneVowel;
         for (int k = 0; k < 1; k++) {
-            System.out.println(firstWord(s, k));
+//            System.out.println(firstWord(s, k));
             sOneVowel = firstWord(s, k);
             for (int kk = 0; kk < sOneVowel.length(); kk++) {
 
@@ -47,16 +66,6 @@ public class RealEstate {
                     System.out.print(sOneVowel.substring(kk, kk + 1));
 
                 }
-            }
-            System.out.println();
-        }
-        for (int j = 0; j < length; j++) {
-
-            if (s.charAt(j) == ' ') {
-                System.out.println(firstWord(s, j));
-                spaces++;
-                start = spaces;
-                spaces += j;
             }
         }
     }
@@ -73,25 +82,4 @@ public class RealEstate {
         return s.substring(start, stop);
     }
 
-    public static String removeFirstVowels(String s) {
-        String sOneVowel = "";
-        int counter = 0;
-        for (int k = 0; k < 1; k++) {
-            System.out.println(firstWord(s, k));
-            sOneVowel = firstWord(s, k);
-            for (int kk = 0; kk < sOneVowel.length(); kk++) {
-
-                if (counter == 0 && sOneVowel.charAt(kk) == 'a' || counter == 0 && sOneVowel.charAt(kk) == 'e' ||
-                        counter == 0 && sOneVowel.charAt(kk) == 'i' || counter == 0 && sOneVowel.charAt(kk) == 'o' ||
-                        counter == 0 && sOneVowel.charAt(kk) == 'u' || counter == 0 && sOneVowel.charAt(kk) == 'y') {
-                    counter++;
-                } else {
-//                    System.out.print(sOneVowel.substring(kk, kk + 1));
-                    s = sOneVowel.substring(kk, kk + 1);
-                }
-            }
-            System.out.println();
-        }
-        return s;
-    }
 }
