@@ -54,15 +54,26 @@ public class RealEstate {
     public static void NoNoVowels(String s, int counter) {
         String sOneVowel;
         for (int k = 0; k < 1; k++) {
-//            System.out.println(firstWord(s, k));
             sOneVowel = firstWord(s, k);
             for (int kk = 0; kk < sOneVowel.length(); kk++) {
+                int counterA = 0; int counterE = 0; int counterI = 0;
+                int counterO = 0;int counterU = 0;  int counterY = 0;
 
-                if (counter == 0 && sOneVowel.charAt(kk) == 'a' || counter == 0 && sOneVowel.charAt(kk) == 'e' ||
-                        counter == 0 && sOneVowel.charAt(kk) == 'i' || counter == 0 && sOneVowel.charAt(kk) == 'o' ||
-                        counter == 0 && sOneVowel.charAt(kk) == 'u' || counter == 0 && sOneVowel.charAt(kk) == 'y') {
-                    counter++;
-                } else {
+                if (sOneVowel.charAt(kk) == 'a' || counterA != 0){
+                    if (counterA < 1){
+                        counterA++;
+                    }
+                }else if (counterE == 0 && sOneVowel.charAt(kk) == 'e'){
+                    counterE++;
+                }else if (counterI == 0 && sOneVowel.charAt(kk) == 'i'){
+                    counterI++;
+                }else if (counterI == 0 && sOneVowel.charAt(kk) == 'o'){
+                    counterO++;
+                }else if (counterU == 0 && sOneVowel.charAt(kk) == 'u'){
+                    counterU++;
+                }else if (counterY == 0 && sOneVowel.charAt(kk) == 'y'){
+                    counterY++;
+                }else {
                     System.out.print(sOneVowel.substring(kk, kk + 1));
 
                 }
