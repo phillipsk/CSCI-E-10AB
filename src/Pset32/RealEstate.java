@@ -61,44 +61,51 @@ public class RealEstate {
             sOneVowel = firstWord(s, k);
             for (int kk = 0; kk < sOneVowel.length(); kk++) {
 
-                if (counter1 == 1 && sOneVowel.charAt(kk) == 'a'){
+                if (counter1 == 1 && sOneVowel.charAt(kk) == 'a' || sOneVowel.charAt(kk) == 'A' ){
                     counter1++;
                 }else{
                     counter1++;
                 }
-                if(counter2 == 1 && sOneVowel.charAt(kk) == 'e'){
+                if(counter2 == 1 && sOneVowel.charAt(kk) == 'e' || sOneVowel.charAt(kk) == 'E'){
                     counter2++;
                 }else {
                     counter2++;
                 }
-                if (counter3 == 1 && sOneVowel.charAt(kk) == 'i'){
+                if (counter3 == 1 && sOneVowel.charAt(kk) == 'i' || sOneVowel.charAt(kk) == 'I'){
                     counter3++;
                 }else {
                     counter3++;
                 }
-                if (counter4 == 1 && sOneVowel.charAt(kk) == 'o'){
+                if (counter4 == 1 && sOneVowel.charAt(kk) == 'o' || sOneVowel.charAt(kk) == 'O'){
                     counter4++;
                 }else {
                     counter4++;
                 }
-                if (counter5 == 1 && sOneVowel.charAt(kk) == 'u'){
+                if (counter5 == 1 && sOneVowel.charAt(kk) == 'u' || sOneVowel.charAt(kk) == 'U'){
                     counter5++;
                 }else {
                     counter5++;
 //                    System.out.print(sOneVowel.charAt(kk));
                 }
-                if (counter6 == 1 && sOneVowel.charAt(kk) == 'y') {
+                if (counter6 == 1 && sOneVowel.charAt(kk) == 'y' || sOneVowel.charAt(kk) == 'Y') {
                     counter6++;
                 } else{
                     counter6++;
                 }
-                if (sOneVowel.charAt(kk) != 'a' && sOneVowel.charAt(kk) != 'e' && sOneVowel.charAt(kk) != 'i' &&
-                        sOneVowel.charAt(kk) != 'o' && sOneVowel.charAt(kk) != 'u' && sOneVowel.charAt(kk) != 'y'){
+                if (sOneVowel.charAt(kk) != 'a' && sOneVowel.charAt(kk) != 'A'
+                        && sOneVowel.charAt(kk) != 'e' && sOneVowel.charAt(kk) != 'E'
+                        && sOneVowel.charAt(kk) != 'i' && sOneVowel.charAt(kk) != 'I'
+                        && sOneVowel.charAt(kk) != 'o' && sOneVowel.charAt(kk) != 'O'
+                        && sOneVowel.charAt(kk) != 'u' && sOneVowel.charAt(kk) != 'U'
+                        && sOneVowel.charAt(kk) != 'y' && sOneVowel.charAt(kk) != 'Y'){
                     System.out.print(sOneVowel.substring(kk, kk + 1));
 //                    counter1++; counter2++; counter3++; counter4++; counter5++; counter6++;
-                } else if(sOneVowel.charAt(kk) == 'a' && counter1 < 2 ||  sOneVowel.charAt(kk) == 'e' && counter2 < 2 ||
-                        sOneVowel.charAt(kk) == 'i' && counter3 < 2 || sOneVowel.charAt(kk) == 'o' && counter4 < 2 ||
-                        sOneVowel.charAt(kk) == 'u' && counter5 < 2 || sOneVowel.charAt(kk) == 'y' && counter6 < 2 ){
+                } else if(sOneVowel.charAt(kk) == 'a' && counter1 < 2 || sOneVowel.charAt(kk) == 'A'  && counter1 < 2
+                        ||  sOneVowel.charAt(kk) == 'e' && counter2 < 2 || sOneVowel.charAt(kk) == 'E'&& counter2 < 2
+                        ||  sOneVowel.charAt(kk) == 'i' && counter3 < 2 || sOneVowel.charAt(kk) == 'I'&& counter3 < 2
+                        ||  sOneVowel.charAt(kk) == 'o' && counter4 < 2 || sOneVowel.charAt(kk) == 'O'&& counter4 < 2
+                        ||  sOneVowel.charAt(kk) == 'u' && counter5 < 2 || sOneVowel.charAt(kk) == 'U'&& counter5 < 2
+                        ||  sOneVowel.charAt(kk) == 'y' && counter6 < 2 || sOneVowel.charAt(kk) == 'Y'&& counter6 < 2){
                     System.out.print(sOneVowel.substring(kk, kk + 1)); {
 //                    System.out.print(sOneVowel.substring(kk, kk + 1));
                     }
