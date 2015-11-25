@@ -34,4 +34,48 @@ public class PizzaTest {
                 "One slice costs $1.49, which comes to $0.038 per square inch.");
     }
 
+/*    package Pset32;
+
+    *//**
+     * csci-e-10ab
+     *
+     * @author Kevin Phillips
+     * @since 11/19/2015
+     *//*
+    public class Pizza {
+        //    instance variables
+        public String PizzaName;
+        public double radius;
+        public double cost;
+        public int  slices;
+
+        //    constructor
+        Pizza(String a, double b, double c, int d){
+            PizzaName = a;
+            radius = b;
+            cost = c;
+            slices = d;
+        }
+
+        public String getName(){
+//        PizzaName = s;
+            return PizzaName;
+        }
+
+        public double areaPerSlice(){
+//        radius = 8;
+//        slices = n_slices;
+            return (Math.PI*radius*radius) / (double) slices;
+        }
+
+        public double costPerSlice(){
+            return cost / slices;
+        }
+
+        public double costPerSquareInch(){
+            return cost / areaPerSlice();
+        }
+    }*/
+
+
 }
