@@ -7,17 +7,36 @@ package Pset32;
  * @since 11/19/2015
  */
 public class Pizza {
+//    instance variables
     public String PizzaName;
-    public double TotalCost;
+    public double radius;
+    public double cost;
     public int  slices;
 
+//    constructor
+    Pizza(String a, double b, double c, int d){
+        PizzaName = a;
+        radius = b;
+        cost = c;
+        slices = d;
+    }
 
-    public String getName(String s){
+    public String getName(){
+//        PizzaName = s;
         return PizzaName;
     }
 
-/*    public double areaPerSlice(double n){
+    public double areaPerSlice(){
+//        radius = 8;
+//        slices = n_slices;
+        return (Math.PI*radius*radius) / (double) slices;
+    }
 
-        return
-    }*/
+    public double costPerSlice(){
+        return cost / slices;
+    }
+
+    public double costPerSquareInch(){
+        return cost / areaPerSlice();
+    }
 }
