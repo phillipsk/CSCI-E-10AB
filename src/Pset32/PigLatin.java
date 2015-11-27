@@ -24,6 +24,8 @@ public class PigLatin {
         System.out.println(piggie("queen"));    //  queen gets translated to een-quay (note the 'u' stays with 'q')
         System.out.println(piggie("by"));       //  by gets translated to y-bay (note that 'y' is a vowel)
 
+        Scanner console = new Scanner(System.in);
+        console.hasNext("") // console.hasNext() >>String Pattern
     }
 
     public static String piggie(String s) {
@@ -54,7 +56,7 @@ public class PigLatin {
         }
     }
 
-    public static int getInt(Scanner console, String prompt){
+    public static int getString(Scanner console, String prompt){
         System.out.print(prompt);
         while (!console.hasNextInt()){ //&& (console.nextInt() < 0)){
             console.next(); // discard non-integer values as we are looking for integers only
