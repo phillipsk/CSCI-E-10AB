@@ -11,9 +11,32 @@ public class Rational {
     public static void main(String[] args) {
         Rational a2 = new Rational (8, 16);
         Rational b2 = new Rational (2, 3);
-        a2.lessThanRat(b2);
-            System.out.println(a2.lessThanRat(b2));
+//        a2.lessThanRat(b2);
+        System.out.println("a = " + a2 + " \nand \nb = " + b2);
+        System.out.println(a2.lessThanRat(b2));
 
+        System.out.println();
+        Rational foo = new Rational(5, 17);
+        Rational bar = new Rational(6, 19);
+        System.out.println("a = " + foo + " \nand \nb = " + bar);
+        System.out.println(foo.lessThanRat(bar));
+
+        boolean result = foo.lessThanRat(bar);
+
+        System.out.println();
+        boolean rr_result = new Rational( 3, 8).lessThanRat(new Rational(7, 16));
+        System.out.println(rr_result);
+        boolean r1 = new Rational( 3, 8).lessThanRat(new Rational(7, 16)); //  is true
+        boolean r2 = new Rational(-3,-8).lessThanRat(new Rational(7, 16)); //  is true
+        boolean r3 = new Rational( 3, 8).lessThanRat(new Rational(7,-16)); //  is false
+        boolean r4 = new  Rational(-3, 8).lessThanRat(new Rational(7,-16)); //  is false
+        System.out.println("r1 = " + r1);
+        System.out.println("r2 = " + r2);
+        System.out.println("r3 = " + r3);
+        System.out.println("r4 = " + r4);
+
+
+/*          // Examples outlined in Lecture
         Rational a = new Rational(9,12);
         Rational b = new Rational(6);
         Rational c = new Rational(a);
@@ -23,7 +46,7 @@ public class Rational {
         c = a.addRat(b);
         System.out.println("c = " + c + " and a = " + a);
         a = b.mulRat(c);
-        System.out.println("a = " + a + " and d = " + d);
+        System.out.println("a = " + a + " and d = " + d);*/
     }
 
 
@@ -96,15 +119,21 @@ public class Rational {
         return  numerator + " / " + denominator;
     }
 
-    public String lessThanRat(Rational explicit_Rational){
-        double first_rational = this.numerator / this.denominator;
-        double second_rational = explicit_Rational.numerator / explicit_Rational.denominator;
+    /**
+     * @param explicit_Rational Literally, explicit parameter passed once method is called, parameter
+     *                          of the Rational form, as defined in the Rational class
+     * @return  true if the implicit Rational number is greater than or equal to the explicit Rational
+     * parameter
+     */
+    public boolean lessThanRat(Rational explicit_Rational){
+        double first_rational = (double) this.numerator / this.denominator;
+        double second_rational = (double) explicit_Rational.numerator / explicit_Rational.denominator;
         if (first_rational < second_rational){
-            return "The first rational number is less than the second rational number.";
+            return true;
         }else if (first_rational == second_rational){
-            return "These rational numbers equal each other!";
+            return false;
         }else {
-            return "The second rational number is greater than the first rational number.";
+            return false;
         }
     }
 }
