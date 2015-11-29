@@ -25,7 +25,7 @@ public class PigLatin {
         System.out.println(piggie("by"));       //  by gets translated to y-bay (note that 'y' is a vowel)
 
         Scanner console = new Scanner(System.in);
-        console.hasNext("") // console.hasNext() >>String Pattern
+        console.hasNext(""); // console.hasNext() >>String Pattern
     }
 
     public static String piggie(String s) {

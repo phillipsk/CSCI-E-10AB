@@ -8,10 +8,10 @@ package Pset32;
  */
 public class Pizza {
 //    instance variables
-    public String PizzaName;
-    public double radius;
-    public double cost;
-    public int  slices;
+    private String PizzaName;
+    private double radius;
+    private double cost;
+    private int  slices;
 
 //    constructor
     Pizza(String a, double b, double c, int d){
@@ -37,6 +37,6 @@ public class Pizza {
     }
 
     public double costPerSquareInch(){
-        return cost / areaPerSlice();
+        return costPerSlice() / areaPerSlice();
     }
 }

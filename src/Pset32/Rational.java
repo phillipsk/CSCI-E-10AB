@@ -9,7 +9,21 @@ package Pset32;
 public class Rational {
 
     public static void main(String[] args) {
+        Rational a2 = new Rational (8, 16);
+        Rational b2 = new Rational (2, 3);
+        a2.lessThanRat(b2);
+            System.out.println(a2.lessThanRat(b2));
 
+        Rational a = new Rational(9,12);
+        Rational b = new Rational(6);
+        Rational c = new Rational(a);
+        Rational d = a; // d is not a copy of a
+        System.out.println("a = " + a + " and b = " + b);
+        System.out.println("c = " + c);
+        c = a.addRat(b);
+        System.out.println("c = " + c + " and a = " + a);
+        a = b.mulRat(c);
+        System.out.println("a = " + a + " and d = " + d);
     }
 
 
@@ -80,5 +94,17 @@ public class Rational {
     public String toString ()
     {
         return  numerator + " / " + denominator;
+    }
+
+    public String lessThanRat(Rational explicit_Rational){
+        double first_rational = this.numerator / this.denominator;
+        double second_rational = explicit_Rational.numerator / explicit_Rational.denominator;
+        if (first_rational < second_rational){
+            return "The first rational number is less than the second rational number.";
+        }else if (first_rational == second_rational){
+            return "These rational numbers equal each other!";
+        }else {
+            return "The second rational number is greater than the first rational number.";
+        }
     }
 }
