@@ -7,17 +7,44 @@ package Pset32;
  * @since 11/11/15
  */
 public class SeasonTest {
+    /**
+     * This program evaluates an integer month and day value passed by several tests against the calling
+     * 'season' method. Depending on the month and day criteria passed, as outlined in the class homework,
+     * the season method returns the appropriate String response.
+     */
     public static void main(String[] args) {
+        System.out.println("System.out.println(season(2,1));");
+        System.out.println(season(2,1));
+        System.out.println("System.out.println(season(5,1));");
+        System.out.println(season(5,1));
+        System.out.println("System.out.println(season(8,1));");
+        System.out.println(season(8,1));
+        System.out.println("System.out.println(season(11,1));");
+        System.out.println(season(11,1));
+        System.out.println("System.out.println(season(5,31));");
         System.out.println(season(5,31));
+        System.out.println("System.out.println(season(2,29));");
         System.out.println(season(2,29));
+        System.out.println("System.out.println(season(8,31));");
         System.out.println(season(8,31));
+        System.out.println("System.out.println(season(8,30));");
         System.out.println(season(8,30));
+        System.out.println("System.out.println(season(9,10));");
         System.out.println(season(9,10));
+        System.out.println("System.out.println(season(5,31));");
         System.out.println(season(5,31));
+        System.out.println("System.out.println(season(11,31));");
         System.out.println(season(11,31));
-        System.out.println(season(11,31));
+        System.out.println("System.out.println(season(15,3));");
+        System.out.println(season(15,3));
     }
 
+    /**
+     * @param month integer valued passed through main, legal values == 1 to 12
+     * @param day   integer valued passed through main, legal values cary according to
+     *              the Gregorian calendar
+     * @return  Winter, Spring, Summer, or Fall, or impossible if an illegal value is passed.
+     */
     public static String season(int month, int day){
 
         if (month > 12 || day > 32){

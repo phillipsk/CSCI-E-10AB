@@ -9,6 +9,9 @@ import java.util.Scanner;
  * @since 11/24/2015
  */
 public class PigLatin {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 /*        piggie("deepest");  //  deepest gets translated into eepest-day
         piggie("shade");    //  shade gets translated to ade-shay
@@ -28,6 +31,10 @@ public class PigLatin {
         console.hasNext(""); // console.hasNext() >>String Pattern
     }
 
+    /**
+     * @param s
+     * @return
+     */
     public static String piggie(String s) {
 //        String
         int k = 0;
@@ -56,6 +63,11 @@ public class PigLatin {
         }
     }
 
+    /**
+     * @param console
+     * @param prompt
+     * @return
+     */
     public static int getString(Scanner console, String prompt){
         System.out.print(prompt);
         while (!console.hasNextInt()){ //&& (console.nextInt() < 0)){

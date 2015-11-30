@@ -9,20 +9,24 @@ import java.util.Scanner;
  * @since 11/19/2015
  */
 public class RealEstate {
-    //    public final String  ADVERTISEMENT = "Desirable unfurnished flat in quiet residential area";
-    public final int CONSTANT = 1;
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Please enter an advertisement: ");
         Scanner console = new Scanner(System.in);
-//        String advertisement = console.nextLine();
-        String advertisement = "Desirable unfurnished flat in quiet residential area";
+        String advertisement = console.nextLine();
+//        String advertisement = "Desirable unfurnished flat in quiet residential area";
 //        System.out.println(advertisement);
 //        System.out.println(noVowels(advertisement));
         noVowels(advertisement);
 //        System.out.println(firstWord(advertisement));
     }
 
+    /**
+     * @param s
+     */
     public static void noVowels(String s) {
 
 //        ,e,i,o,u,y;
@@ -35,7 +39,7 @@ public class RealEstate {
         int length = s.length();
 
 //        First Word only
-        int aCounter= 0; int eCounter =0; int iCounter=0; int oCounter = 0; int uCounter = 0; int yCounter =0;
+        int aCounter = 0; int eCounter = 0; int iCounter = 0; int oCounter = 0; int uCounter = 0; int yCounter = 0;
         NoNoVowels(s, aCounter,eCounter,iCounter,oCounter,uCounter,yCounter);
 
 //        remaining words
@@ -52,6 +56,15 @@ public class RealEstate {
         }
     }
 
+    /**
+     * @param s
+     * @param counter1
+     * @param counter2
+     * @param counter3
+     * @param counter4
+     * @param counter5
+     * @param counter6
+     */
 //            I am aware this method iterates over every char, I would preferably like to save the iterations
 //              if only the char were vowels
     public static void NoNoVowels(String s, int counter1, int counter2, int counter3, int counter4, int counter5, int counter6) {
@@ -114,6 +127,11 @@ public class RealEstate {
         }
     }
 
+    /**
+     * @param s
+     * @param start
+     * @return
+     */
     public static String firstWord(String s, int start) {
 //        int start = 0;
         while (start < s.length() && s.charAt(start) == ' ') {

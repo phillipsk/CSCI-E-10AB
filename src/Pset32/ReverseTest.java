@@ -9,18 +9,40 @@ import java.util.Scanner;
  * @since 11/11/15
  */
 public class ReverseTest {
+    /**
+     * This programs calls upon the printReverse methods with a series of String values and empty Strings.
+     * Several test method calls are predefined and tested within the main method.
+     */
     public static void main(String[] args) {
+        System.out.println("printReverse(\"Uncle Foobar\");");
         printReverse("Uncle Foobar");
+        System.out.println("printReverse(\" \");");
         printReverse(" ");
+        System.out.println("printReverse(\"   \");");
         printReverse("   ");
+        System.out.println("printReverse(\"A man, a plan, a canal, Panama!\");");
         printReverse("A man, a plan, a canal, Panama!");
-        System.out.println("");
+        System.out.println("printReverse(\"race car\");");
         printReverse("race car");
+        System.out.println("printReverse(\"\");");
+        printReverse("");
+        System.out.println("printReverse(\"U\");");
+        printReverse("U");
+        System.out.println("printReverse(\"Un\");");
+        printReverse("Un");
     }
 
+    /**
+     * This method evaluates each character of the passed String argument and prints a new String value which
+     * represents the reversed series of characters as originally present in the originally passed String.
+     * Simply put, and as the method header suggests, this method prints the passed String value in reverse.
+     * Empty Strings call upon no print method. String values with spaces are printed in reverse order.
+     *
+     * @param s represents the String value passed through the main method.
+     */
     public static void printReverse(String s){
-        if (s.charAt(0) == ' '){
-            System.out.println(" ");
+        if (s.isEmpty()){
+
         }else {
 
             int left = 0;                // start at the beginning of the input String
@@ -32,6 +54,6 @@ public class ReverseTest {
             for (int i = right; i != -1; i--){
                 System.out.print(s.charAt(i));
             }
-        }
+        }System.out.println();
     }
 }
