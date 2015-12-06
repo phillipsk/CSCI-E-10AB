@@ -1,5 +1,7 @@
 package Pset41;
 
+import java.util.Arrays;
+
 /**
  * Harvard Extension School Programming Certificate
  * CSCI E-10A Introduction to Computer Science Using Java I
@@ -14,6 +16,33 @@ public class Pencil_and_Paper_Exercises {
         boolean answers[] = new boolean[20];
         double avg_family_szie[] = new double[110];
         double avg_rainfaill_5_years[][] = new double[12][5];
+
+        final int SIZE = 5;
+//        int sample[] = new int[SIZE];
+/*            for (int i = 0; i < sample.length; i++){
+                sample[i] = 5;
+            }*/
+
+        int[] sample = {2, -4 , 6 ,3 ,-12};
+        System.out.println(Arrays.toString(sample));
+//        swap(sample, 0, sample.length-1);
+        for (int i = 0; i < sample.length; i++){
+/*            if (sample[i] < 0){
+                sample[i] = sample[i]* -1;
+            }*/
+            if (sample[i] % 2 != 0){
+                System.out.print(i);
+            }
+        }
+        System.out.println();
+
+/*        for (int i = 0; i < sample.length / 2; i++){
+            int j = sample.length -i - 1;
+        }*/
+        System.out.println(Arrays.toString(sample));
+
+
+        System.out.println("");
 
         // This is the answer to part Question 1 part D below:
 
@@ -44,7 +73,20 @@ public class Pencil_and_Paper_Exercises {
             r[i] = rand_num.nextInt();
     }
 }*/
+            System.out.println(digitSum(3456));
 
+    }
 
+    public static void swap(int [] list, int i, int j){
+        int temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
+    }
+
+    static int digitSum (int n)
+    {
+        if ( n < 10) { return n;
+        }
+        else return n;
     }
 }
