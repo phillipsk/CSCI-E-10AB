@@ -16,11 +16,11 @@ public class CountInRange {
     /**
      * This final constant represents the total examples demonstrated.
      */
-    public final static int EXAMPLES = (int) (Math.random() * 10 + 1);;
+    public final static int EXAMPLES = 4;
     /**
      * This final constant represents the size or variable array_list
      */
-    public final static int SIZE = (int) (Math.random() * 100);;
+    public final static int SIZE = 10;
 
     /**
      * This method takes an argument of one integer array, a minimum integer value,and a maximum integer value.
@@ -47,10 +47,9 @@ public class CountInRange {
     /**
      * This main method demonstrates the functionality of the countInRange method through several examples defined
      * through the constant value EXAMPLES. This program randomizes every integer value. Every integer in the array
-     * is randomized, Every Minimum and Maximum value is randomized. Every initialized array is randomized. All
-     * three of the parameters passed into countInRange are randomized. Negative values are included. Finally, the
-     * number of demonstrations as deinfed through constant value Examples, is likewise randomized. Pseudo-random
-     * numbers are assumed as randomized integers.
+     * is randomized, Every Minimum and Maximum value is randomized. All three of the parameters passed into
+     * countInRange are randomized. Negative values are included.Pseudo-random numbers are assumed as
+     * randomized integers.
      */
     public static void main(String[] args) {
         int passed_min = 0;
