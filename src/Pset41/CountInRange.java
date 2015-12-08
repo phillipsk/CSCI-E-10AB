@@ -16,11 +16,11 @@ public class CountInRange {
     /**
      * This final constant represents the total examples demonstrated.
      */
-    public final static int EXAMPLES = 4;
+    public final static int EXAMPLES = (int) (Math.random() * 10 + 1);;
     /**
      * This final constant represents the size or variable array_list
      */
-    public final static int SIZE = 10;
+    public final static int SIZE = (int) (Math.random() * 100);;
 
     /**
      * This method takes an argument of one integer array, a minimum integer value,and a maximum integer value.
@@ -55,22 +55,25 @@ public class CountInRange {
         int passed_max = 0;
         int[] array_list = new int[SIZE];
 
-        for (int i = 1; i < EXAMPLES; i++){
+        System.out.println("Demonstrating " + EXAMPLES + " example(s) with an array size of " + SIZE + "\n");
+        for (int i = 1; i <= EXAMPLES; i++){
             for (int j = 0; j < array_list.length; j++){
-                if (j >= 5){
+                if (Math.random() > 0.5){
                     array_list[j] = (int) (Math.random() * -100); // (int) (Math.random() * -100);
                 }else {
                     array_list[j] = (int) (Math.random() * 100);
                 }
-                if (Math.random() > 0.5){
-                    passed_min = (int) (Math.random() * -100);
-                    passed_max = (int) (Math.random() * 100);
-                }else {
-                    passed_min = (int) (Math.random() * 100);
-                    passed_max = (int) (Math.random() * 100);
-                }
+                do {
+                    if (Math.random() > 0.5){
+                        passed_min = (int) (Math.random() * -100);
+                        passed_max = (int) (Math.random() * 100);
+                    }else {
+                        passed_min = (int) (Math.random() * 100);
+                        passed_max = (int) (Math.random() * 100);
+                    }
+                }while (passed_min > passed_max);
             }
-            System.out.println("Arrary #" + i + Arrays.toString(array_list) + "\n" +
+            System.out.println("Arrary #" + i + " " + Arrays.toString(array_list) + "\n" +
                             "Min value = " + passed_min + "\nMax value = " + passed_max + "\n" +
                     "CountIn Range = " + countInRange(array_list,passed_min,passed_max) + "\n");
         }
