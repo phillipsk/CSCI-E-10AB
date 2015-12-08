@@ -17,18 +17,18 @@ class Foobar
     public static void main (String [] args)
     {
 //        1 properly define array
-        int r[] = new int[20];
-//        5 The Question asks for an array of INTEGER values, changed Math.Random() class to new Random object,
-//        previously tried to type cast the Math.Random() class into an integer but found allow resulting values
-//        rounded down
-        Random rand_num = new Random();
+//        int r[] = new int[20];
+        double r[] = new double[20];
 
-//        2 Not a method call, differences among object and array methods
+//        2 Not a method call, no need for () after r.length -- differences among object and array methods
 //        3 Modified for loop continuation parameter to be less than array length, which keeps array index in bound
-        for (int i = 0; i < r.length; i++)
-//            4 appropriately call the random() method of the Math class
+        for (int i = 0; i < r.length; i++){
 
-//            5 The Question asks for an array of INTEGER values
-            r[i] = rand_num.nextInt();
+//            4 appropriately call the random() method of the Math class
+//            5 The Question asks for an array of INTEGER values, type cast the Math.random value into an integer,
+//              and multiplied by 100 to produce pseudorandom values greater than 1
+            r[i] = (int) (Math.random()*100);
+//            6 Added {} braces for best For Loop syntax practice
+        }
     }
 }
