@@ -12,6 +12,28 @@ import java.util.Arrays;
  * @since 12/7/2015
  */
 public class CountInRange {
+
+    /**
+     * This final constant represents the total examples demonstrated.
+     */
+    public final static int EXAMPLES = 4;
+    /**
+     * This final constant represents the size or variable array_list
+     */
+    public final static int SIZE = 10;
+
+    /**
+     * This method takes an argument of one integer array, a minimum integer value,and a maximum integer value.
+     * The array's length is defined through the constant value SIZE.This method returns an integer count variable
+     * which represents the number of integers which exist in the passed array between the minimum and maximum passed
+     * values.
+     *
+     * @param list  represents the passed array from main
+     * @param min   represents the minimum value which defines the beginning of the counting range
+     * @param max   represents the maximum value which defines the ending of the counting range
+     * @return  an integer count variable which represents the number of integers which exist between the minimum
+     *          and maximum parameters.
+     */
     public static int countInRange(int[] list, int min, int max){
         int count = 0;
         for (int n : list){
@@ -22,29 +44,35 @@ public class CountInRange {
         return count;
     }
 
-    //        Difference between static and non-static??
-public final static int EXAMPLES = 10;
-
+    /**
+     * This main method demonstrates the functionality of the countInRange method through several examples defined
+     * through the constant value EXAMPLES. This program randomizes every integer value. Every integer in the array
+     * is randomized, Every Minimum and Maximum value is randomized. Every initialized array is randomized. All
+     * three of the parameters passed into countInRange are randomized. Negative values are included.
+     */
     public static void main(String[] args) {
-//        int[] array_list = {14, 1, 7, 22, 17, 36, 7, -43, 5};
-//        System.out.println(countInRange(array_list, 4, 17));
-        int[] array_list = new int[EXAMPLES];
-        for (int i = 0; i <= EXAMPLES; i++){
-/*            for (int j = (int) (Math.random() * 100); ; j++){
+        int passed_min = 0;
+        int passed_max = 0;
+        int[] array_list = new int[SIZE];
 
-            }*/
-
-            array_list[i] = int num = (int) (Math.random() * 100);
-
-/*            do {
-                int num = (int) (Math.random() * 100);
-                array_lis
-            }while (array_list.length <= EXAMPLES)*/
-
+        for (int i = 1; i < EXAMPLES; i++){
+            for (int j = 0; j < array_list.length; j++){
+                if (j >= 5){
+                    array_list[j] = (int) (Math.random() * -100); // (int) (Math.random() * -100);
+                }else {
+                    array_list[j] = (int) (Math.random() * 100);
+                }
+                if (Math.random() > 0.5){
+                    passed_min = (int) (Math.random() * -100);
+                    passed_max = (int) (Math.random() * 100);
+                }else {
+                    passed_min = (int) (Math.random() * 100);
+                    passed_max = (int) (Math.random() * 100);
+                }
+            }
+            System.out.println("Arrary #" + i + Arrays.toString(array_list) + "\n" +
+                            "Min value = " + passed_min + "\nMax value = " + passed_max + "\n" +
+                    "CountIn Range = " + countInRange(array_list,passed_min,passed_max) + "\n");
         }
-        int num = (int) (Math.random() * 100);
-        System.out.println(num);
-        int[] array_list2 = {(int) (Math.random() * 100)};
-        System.out.println(Arrays.toString(array_list2));
     }
 }
