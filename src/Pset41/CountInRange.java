@@ -48,7 +48,9 @@ public class CountInRange {
      * This main method demonstrates the functionality of the countInRange method through several examples defined
      * through the constant value EXAMPLES. This program randomizes every integer value. Every integer in the array
      * is randomized, Every Minimum and Maximum value is randomized. Every initialized array is randomized. All
-     * three of the parameters passed into countInRange are randomized. Negative values are included.
+     * three of the parameters passed into countInRange are randomized. Negative values are included. Finally, the
+     * number of demonstrations as deinfed through constant value Examples, is likewise randomized. Pseudo-random
+     * numbers are assumed as randomized integers.
      */
     public static void main(String[] args) {
         int passed_min = 0;
