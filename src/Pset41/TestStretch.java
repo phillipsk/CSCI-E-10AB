@@ -25,21 +25,27 @@ public class TestStretch {
      * @return  a single dimension array double the length of the array passed in the method header argument
      */
     public static int[] stretch(int[] list){
-        int[] stretched_array = new int[list.length * 2];
-        for (int i = 0; i < stretched_array.length; i+=2){
-            for (int j = 0; j < list.length; j++){
-                if (list[j] % 2 == 0){
-                    stretched_array[i] = list[j] / 2;
-                    stretched_array[i+1] = list[j] / 2;
-                    i+=2;
-                }else {
-                    stretched_array[i] = (list[j] / 2) +1;
-                    stretched_array[i+1] = list[j] / 2;
-                    i+=2;
+        int[] listEmpty = {};
+        if (list == listEmpty){
+            return listEmpty;
+        }else {
+
+            int[] stretched_array = new int[list.length * 2];
+            for (int i = 0; i < stretched_array.length; i+=2){
+                for (int j = 0; j < list.length; j++){
+                    if (list[j] % 2 == 0){
+                        stretched_array[i] = list[j] / 2;
+                        stretched_array[i+1] = list[j] / 2;
+                        i+=2;
+                    }else {
+                        stretched_array[i] = (list[j] / 2) +1;
+                        stretched_array[i+1] = list[j] / 2;
+                        i+=2;
+                    }
                 }
             }
+            return stretched_array;
         }
-        return stretched_array;
     }
 
     /**
@@ -48,11 +54,12 @@ public class TestStretch {
      */
     public static void main(String[] args)
     {
-        int[] list = {18, 7, 4, 24, 11};
-        int[] list2 = stretch(list);
+        int[] list = {18, 7, 4, 14, 11};
         System.out.println (Arrays.toString(list));
-            // the above prints [18, 7, 4, 24, 11]
-        System.out.println (Arrays.toString(list2));
-            // the above prints [9, 9, 4, 3, 2, 2, 7, 7, 6, 5]
+        // the above prints [18, 7, 4, 24, 11]
+        System.out.println(Arrays.toString(stretch(list)));
+        // the above prints [9, 9, 4, 3, 2, 2, 7, 7, 6, 5]
+        int[] list2 = {};
+        System.out.println (Arrays.toString(stretch(list2)));
     }
 }
