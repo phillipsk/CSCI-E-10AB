@@ -1,5 +1,3 @@
-package Pset41;
-
 /**
  * Harvard Extension School Programming Certificate
  * CSCI E-10A Introduction to Computer Science Using Java I

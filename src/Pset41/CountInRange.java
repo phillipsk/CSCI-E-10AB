@@ -52,8 +52,8 @@ public class CountInRange {
      * randomized integers.
      */
     public static void main(String[] args) {
-        int passed_min = 0;
-        int passed_max = 0;
+            int passed_min = 0;
+            int passed_max = 0;
         int[] array_list = new int[SIZE];
 
         System.out.println("Demonstrating " + EXAMPLES + " example(s) with an array size of " + SIZE + "\n");
