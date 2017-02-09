@@ -30,18 +30,18 @@ public class Power {
 
             if (n % 2 == 0) {
                 double power = power(x, n / 2);
-                return 1.0 / (power * power);
+                return power * power;
             } else {
                 int p = n / 2; // p =1, x = 50
                 double power = power(x, p);
-                return 1.0 / (x * power * power);
+                return power * power * (1.0 / x) ;
             }
 
         }
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = -3;
         int x = 2;
         double result = power(x, n);
         System.out.println(result);
