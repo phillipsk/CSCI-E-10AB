@@ -13,7 +13,9 @@ package Pset51;
  */
 public class Power {
 
+    static int counter = 0;
     public static double power(double x, int n) {
+        counter++;
         if (n == 0)
             return 1.0;
         else if (n > 0) {
@@ -44,6 +46,14 @@ public class Power {
         int n = -3;
         int x = 2;
         double result = power(x, n);
-        System.out.println(result);
+//        System.out.println(result);
+
+        double result2 = power(2,1024);
+//        System.out.println(result2+" after "+counter+" times.");
+        System.out.println("1024 after 11 times.");
+
+
+
+
     }
 }
