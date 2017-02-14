@@ -20,8 +20,8 @@ public class Power {
             return 1.0;
         else if (n > 0) {
             if (n % 2 == 0) {
-                double power = power(x, n / 2);
-                return power * power;
+                double powerABC = power(x, n / 2);
+                return powerABC * powerABC;
             } else {
                 int p = n / 2; // p =1, x = 50
                 double power = power(x, p);
@@ -43,14 +43,16 @@ public class Power {
     }
 
     public static void main(String[] args) {
-        int n = -3;
-        int x = 2;
-        double result = power(x, n);
+//        int n = -3;
+//        int x = 2;
+//        double result = power(x, n);
 //        System.out.println(result);
 
-        double result2 = power(2,1024);
+        double x = 5.0;
+        int n = 1024;
+        double result2 = power(x,n);
 //        System.out.println(result2+" after "+counter+" times.");
-        System.out.println("1024 after 11 times.");
+        System.out.println("An 'n' value of " + n + " generated a total of " + counter +" total calls.");
 
 
 
