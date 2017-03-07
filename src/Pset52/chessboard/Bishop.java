@@ -12,8 +12,6 @@ class Bishop extends Piece
       int columnDiff = pieceColumn - indexColumn;
       int rowDiff = pieceRow - indexRow;
 
-      if ((columnDiff + rowDiff == 0) ||  (columnDiff == rowDiff))
-           return true;
-      else return false; 
+        return (columnDiff + rowDiff == 0) || (columnDiff == rowDiff);
     }
 }

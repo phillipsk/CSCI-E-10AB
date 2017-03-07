@@ -21,10 +21,7 @@ public class King extends Piece {
 			return true;
 		}
 
-		if (indexRow == pieceRow && (indexColumn == pieceColumn + 1 || indexColumn == pieceColumn - 1)) {
-			return true;
-		}
-		return false;
-	}
+        return indexRow == pieceRow && (indexColumn == pieceColumn + 1 || indexColumn == pieceColumn - 1);
+    }
 
 }
