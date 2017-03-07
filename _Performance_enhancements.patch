@@ -1,0 +1,221 @@
+Index: src/Pset52/chessboard/King.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/chessboard/King.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/chessboard/King.java	(revision )
+@@ -11,7 +11,7 @@
+  * @since 3/5/17
+  */
+ 
+-public class King extends Piece {
++class King extends Piece {
+ 
+ 	@Override
+ 	boolean attackingThisLocation(int indexRow, int indexColumn) {
+Index: src/Pset52/barcode/BarCodeTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/barcode/BarCodeTest.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/barcode/BarCodeTest.java	(revision )
+@@ -26,17 +26,17 @@
+ 							"||:::||::|:::|:|:|::|||:::||:::|",
+ 							"||:|:::|:|:||::::::||:|::|:::||:", 
+ 							"0231a" };
+-		for (int i = 0; i < tester.length; i++) {
+-			System.out.println();
+-			try {
+-				System.out.println("Creating bar code with " + tester[i]);
+-				BarCode bc = new BarCode(tester[i]);
+-				System.out.println("\tCode created!   ");
+-				System.out.println("\tBar code is : " + bc.getBarCode() + ";  zip is : " + bc.getZipCode());
+-			} catch (IllegalArgumentException iae) {
+-				System.out.println(iae.getMessage());
+-			}
+-			System.out.println();
+-		}
++        for (String aTester : tester) {
++            System.out.println();
++            try {
++                System.out.println("Creating bar code with " + aTester);
++                BarCode bc = new BarCode(aTester);
++                System.out.println("\tCode created!   ");
++                System.out.println("\tBar code is : " + bc.getBarCode() + ";  zip is : " + bc.getZipCode());
++            } catch (IllegalArgumentException iae) {
++                System.out.println(iae.getMessage());
++            }
++            System.out.println();
++        }
+ 	}
+ }
+Index: src/Pset52/barcode/BarCode.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/barcode/BarCode.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/barcode/BarCode.java	(revision )
+@@ -1,5 +1,7 @@
+ package Pset52.barcode;
+ 
++import java.util.Objects;
++
+ /**
+  * Harvard Extension School Programming Certificate
+  * CSCI E-10B Introduction to Computer Science Using Java II
+@@ -11,11 +13,14 @@
+  * @since 3/3/17
+  */
+ 
+-public class BarCode {
++class BarCode {
+ 	private String zipCode;
+ 	private String barCode;
+ 
+-	public BarCode(String arg) {
++
++
++    BarCode(String arg) {
++
+ 		if (arg != null) {
+ 			// if the length of the argument is 5, its a zip code.
+ 			if (arg.length() == 5) {
+@@ -24,7 +29,7 @@
+ 				this.barCode = encode(zipCode);
+ 				// if the resultant bar code is empty, throw an exception.
+ 				// Possibly the supplied zip code is not valid.
+-				if (this.barCode == "")
++				if (Objects.equals(this.barCode, ""))
+ 					throw new IllegalArgumentException("Illegal zip code values: " + arg);
+ 			} // if the argument is 32 characters long, its a bar code.
+ 			else if (arg.length() == 32) {
+@@ -33,7 +38,7 @@
+ 				this.zipCode = decode(barCode);
+ 				// if the resultant zip code is empty, throw an exception.
+ 				// Possibly the supplied bar code is not valid.
+-				if (this.zipCode == "")
++				if (Objects.equals(this.zipCode, ""))
+ 					throw new IllegalArgumentException("Illegal bar code values: " + arg);
+ 			}
+ 		}
+@@ -136,17 +141,17 @@
+ 		return true;
+ 	}
+ 
+-	// return true if the zipcode is valid, false otherwise
++	// return true if the zip code is valid, false otherwise
+ 	private boolean isValidZipCode(String zipCode) {
+ 		// return false if the length is not 5. A valid zip has length 5
+ 		if (zipCode.length() != 5)
+ 			return false;
+ 
+-		// check for each digit in the zipcode, they must be between 0-9 both
++		// check for each digit in the zip code, they must be between 0-9 both
+ 		// inclusive
+ 		for (int i = 0; i < zipCode.length(); i++) {
+ 			if (zipCode.charAt(i) > '9' || zipCode.charAt(i) < '0') {
+-				// return false if the digist don't lie within 0-9
++				// return false if the digits don't lie within 0-9
+ 				return false;
+ 			}
+ 		}
+@@ -158,8 +163,7 @@
+ 	// returns the check digit for the given sum
+ 	private int getCheckDigit(int sum) {
+ 		int lastDigit = sum % 10;
+-		int checkDigit = 10 - lastDigit;
+-		return checkDigit;
++        return 10 - lastDigit;
+ 	}
+ 
+ 	// encodes a zip code
+@@ -176,7 +180,7 @@
+ 		// meanwhile also calculate the sum, it will be helpful in calculating
+ 		// the check digit
+ 		for (int i = 0; i < zip.length(); i++) {
+-			sum += Integer.valueOf(zip.charAt(i) - '0');
++			sum += zip.charAt(i) - '0';
+ 			// keep building the bar code for each digit in the zip
+ 			sb.append(digitToCode(zip.charAt(i) - '0'));
+ 		}
+@@ -206,7 +210,7 @@
+ 			sb.append(codeToDigit(barCode.substring(i, i + 5)));
+ 		}
+ 
+-		// return the zipcode string.
++		// return the zip code string.
+ 		return sb.toString();
+ 	}
+ 
+Index: src/Pset52/chessboard/Knight.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/chessboard/Knight.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/chessboard/Knight.java	(revision )
+@@ -12,9 +12,8 @@
+       int columnDiff = pieceColumn - indexColumn;
+       int rowDiff = pieceRow - indexRow;
+ 
+-      if ((columnDiff * columnDiff + rowDiff * rowDiff == 5) ||
+-          ( (columnDiff == 0) && (rowDiff == 0))) return true;
+-      else return false; 
++        return (columnDiff * columnDiff + rowDiff * rowDiff == 5) ||
++                ((columnDiff == 0) && (rowDiff == 0));
+                
+     }
+ }
+Index: src/Pset52/chessboard/Chessboard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/chessboard/Chessboard.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/chessboard/Chessboard.java	(revision )
+@@ -3,9 +3,9 @@
+ 
+ // Unit 5 lecture notes
+ 
+-/**  
++/**
+  *  Calculates and displays which positions
+- *  a chess piece (for now, just bishops and knights) 
++ *  a chess piece (for now, just bishops and knights)
+  *  can "attack" from a given location on a standard
+  *  8 by 8 chessboard.
+  *
+@@ -13,7 +13,7 @@
+  *  @version Last modified:  January 6, 2016
+  */
+ 
+-import java.util.*;
++import java.util.Scanner;
+ 
+ class Chessboard {
+ 	/**
+Index: src/Pset52/chessboard/Piece.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Pset52/chessboard/Piece.java	(revision dfa89bd0ba5e76e58b2ef06aec225d84f671d6bd)
++++ src/Pset52/chessboard/Piece.java	(revision )
+@@ -4,11 +4,11 @@
+ //  Created by Henry Leitner on January 5, 2016
+ //
+ 
+-import java.util.*;
++import java.util.Scanner;
+ 
+ abstract class Piece {
+-	protected int pieceRow;
+-	protected int pieceColumn;
++	int pieceRow;
++	int pieceColumn;
+ 
+ 	public void placeOnChessBoard() {
+ 		Scanner keyboard = new Scanner(System.in);
