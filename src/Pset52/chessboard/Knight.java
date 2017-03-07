@@ -12,9 +12,8 @@ class Knight extends Piece
       int columnDiff = pieceColumn - indexColumn;
       int rowDiff = pieceRow - indexRow;
 
-      if ((columnDiff * columnDiff + rowDiff * rowDiff == 5) ||
-          ( (columnDiff == 0) && (rowDiff == 0))) return true;
-      else return false; 
+        return (columnDiff * columnDiff + rowDiff * rowDiff == 5) ||
+                ((columnDiff == 0) && (rowDiff == 0));
                
     }
 }

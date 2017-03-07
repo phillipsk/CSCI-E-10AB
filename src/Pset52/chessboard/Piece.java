@@ -4,11 +4,11 @@ package Pset52.chessboard;
 //  Created by Henry Leitner on January 5, 2016
 //
 
-import java.util.*;
+import java.util.Scanner;
 
 abstract class Piece {
-	protected int pieceRow;
-	protected int pieceColumn;
+	int pieceRow;
+	int pieceColumn;
 
 	public void placeOnChessBoard() {
 		Scanner keyboard = new Scanner(System.in);

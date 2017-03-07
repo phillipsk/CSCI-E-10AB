@@ -11,7 +11,7 @@ package Pset52.chessboard;
  * @since 3/5/17
  */
 
-public class King extends Piece {
+class King extends Piece {
 
 	@Override
 	boolean attackingThisLocation(int indexRow, int indexColumn) {

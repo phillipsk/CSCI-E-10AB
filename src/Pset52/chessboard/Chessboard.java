@@ -3,9 +3,9 @@ package Pset52.chessboard;
 
 // Unit 5 lecture notes
 
-/**  
+/**
  *  Calculates and displays which positions
- *  a chess piece (for now, just bishops and knights) 
+ *  a chess piece (for now, just bishops and knights)
  *  can "attack" from a given location on a standard
  *  8 by 8 chessboard.
  *
@@ -13,7 +13,7 @@ package Pset52.chessboard;
  *  @version Last modified:  January 6, 2016
  */
 
-import java.util.*;
+import java.util.Scanner;
 
 class Chessboard {
 	/**
