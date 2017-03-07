@@ -26,17 +26,17 @@ public class BarCodeTest {
 							"||:::||::|:::|:|:|::|||:::||:::|",
 							"||:|:::|:|:||::::::||:|::|:::||:", 
 							"0231a" };
-		for (int i = 0; i < tester.length; i++) {
-			System.out.println();
-			try {
-				System.out.println("Creating bar code with " + tester[i]);
-				BarCode bc = new BarCode(tester[i]);
-				System.out.println("\tCode created!   ");
-				System.out.println("\tBar code is : " + bc.getBarCode() + ";  zip is : " + bc.getZipCode());
-			} catch (IllegalArgumentException iae) {
-				System.out.println(iae.getMessage());
-			}
-			System.out.println();
-		}
+        for (String aTester : tester) {
+            System.out.println();
+            try {
+                System.out.println("Creating bar code with " + aTester);
+                BarCode bc = new BarCode(aTester);
+                System.out.println("\tCode created!   ");
+                System.out.println("\tBar code is : " + bc.getBarCode() + ";  zip is : " + bc.getZipCode());
+            } catch (IllegalArgumentException iae) {
+                System.out.println(iae.getMessage());
+            }
+            System.out.println();
+        }
 	}
 }

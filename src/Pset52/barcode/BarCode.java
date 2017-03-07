@@ -1,5 +1,7 @@
 package Pset52.barcode;
 
+import java.util.Objects;
+
 /**
  * Harvard Extension School Programming Certificate
  * CSCI E-10B Introduction to Computer Science Using Java II
@@ -11,11 +13,14 @@ package Pset52.barcode;
  * @since 3/3/17
  */
 
-public class BarCode {
+class BarCode {
 	private String zipCode;
 	private String barCode;
 
-	public BarCode(String arg) {
+
+
+    BarCode(String arg) {
+
 		if (arg != null) {
 			// if the length of the argument is 5, its a zip code.
 			if (arg.length() == 5) {
@@ -24,7 +29,7 @@ public class BarCode {
 				this.barCode = encode(zipCode);
 				// if the resultant bar code is empty, throw an exception.
 				// Possibly the supplied zip code is not valid.
-				if (this.barCode == "")
+				if (Objects.equals(this.barCode, ""))
 					throw new IllegalArgumentException("Illegal zip code values: " + arg);
 			} // if the argument is 32 characters long, its a bar code.
 			else if (arg.length() == 32) {
@@ -33,7 +38,7 @@ public class BarCode {
 				this.zipCode = decode(barCode);
 				// if the resultant zip code is empty, throw an exception.
 				// Possibly the supplied bar code is not valid.
-				if (this.zipCode == "")
+				if (Objects.equals(this.zipCode, ""))
 					throw new IllegalArgumentException("Illegal bar code values: " + arg);
 			}
 		}
@@ -136,17 +141,17 @@ public class BarCode {
 		return true;
 	}
 
-	// return true if the zipcode is valid, false otherwise
+	// return true if the zip code is valid, false otherwise
 	private boolean isValidZipCode(String zipCode) {
 		// return false if the length is not 5. A valid zip has length 5
 		if (zipCode.length() != 5)
 			return false;
 
-		// check for each digit in the zipcode, they must be between 0-9 both
+		// check for each digit in the zip code, they must be between 0-9 both
 		// inclusive
 		for (int i = 0; i < zipCode.length(); i++) {
 			if (zipCode.charAt(i) > '9' || zipCode.charAt(i) < '0') {
-				// return false if the digist don't lie within 0-9
+				// return false if the digits don't lie within 0-9
 				return false;
 			}
 		}
@@ -158,8 +163,7 @@ public class BarCode {
 	// returns the check digit for the given sum
 	private int getCheckDigit(int sum) {
 		int lastDigit = sum % 10;
-		int checkDigit = 10 - lastDigit;
-		return checkDigit;
+        return 10 - lastDigit;
 	}
 
 	// encodes a zip code
@@ -176,7 +180,7 @@ public class BarCode {
 		// meanwhile also calculate the sum, it will be helpful in calculating
 		// the check digit
 		for (int i = 0; i < zip.length(); i++) {
-			sum += Integer.valueOf(zip.charAt(i) - '0');
+			sum += zip.charAt(i) - '0';
 			// keep building the bar code for each digit in the zip
 			sb.append(digitToCode(zip.charAt(i) - '0'));
 		}
@@ -206,7 +210,7 @@ public class BarCode {
 			sb.append(codeToDigit(barCode.substring(i, i + 5)));
 		}
 
-		// return the zipcode string.
+		// return the zip code string.
 		return sb.toString();
 	}
 
